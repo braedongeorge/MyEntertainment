@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEntertainment", "MyEntertainment\MyEntertainment.csproj", "{2BBF5FBA-9919-4156-A7D2-BE39ADF4BE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEntertainment.Tests", "MyEntertainment.Tests\MyEntertainment.Tests.csproj", "{F298014C-7EAB-4C91-84E5-0EEDB6A49E1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{6016C62B-AC61-488D-9226-C57394234EBE}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{8D2FA6C6-8C22-4AED-84E4-3BF2E9D6D52D}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\MyEntertainment-WAWS-dev.json = PublishScripts\Configurations\MyEntertainment-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{61C51D3F-C3DA-4172-A268-DE9726877E37}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BBF5FBA-9919-4156-A7D2-BE39ADF4BE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBF5FBA-9919-4156-A7D2-BE39ADF4BE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BBF5FBA-9919-4156-A7D2-BE39ADF4BE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBF5FBA-9919-4156-A7D2-BE39ADF4BE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F298014C-7EAB-4C91-84E5-0EEDB6A49E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F298014C-7EAB-4C91-84E5-0EEDB6A49E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F298014C-7EAB-4C91-84E5-0EEDB6A49E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F298014C-7EAB-4C91-84E5-0EEDB6A49E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D2FA6C6-8C22-4AED-84E4-3BF2E9D6D52D} = {6016C62B-AC61-488D-9226-C57394234EBE}
+	EndGlobalSection
+EndGlobal
