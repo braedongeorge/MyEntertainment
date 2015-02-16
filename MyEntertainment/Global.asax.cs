@@ -13,7 +13,7 @@ namespace MyEntertainment
     {
         protected void Application_Start()
         {
-            // Database.SetInitializer<Models.ApplicationDbContext>(null);
+            Database.SetInitializer<Models.ApplicationDbContext>(null);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

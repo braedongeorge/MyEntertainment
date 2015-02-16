@@ -9,8 +9,7 @@ namespace MyEntertainment.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            ContextKey = "MyEntertainment.Models.myEntertainmentDb";
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(MyEntertainment.Models.myEntertainmentDb context)

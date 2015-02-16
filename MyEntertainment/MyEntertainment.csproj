@@ -198,6 +198,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\TVShowViewModels.cs" />
@@ -276,6 +277,8 @@
     <Content Include="Views\TvShow\Search.cshtml" />
     <Content Include="Views\TvShow\Index.cshtml" />
     <Content Include="Views\TvShow\Delete.cshtml" />
+    <Content Include="Views\TvShow\Details.cshtml" />
+    <Content Include="Views\TvShow\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
