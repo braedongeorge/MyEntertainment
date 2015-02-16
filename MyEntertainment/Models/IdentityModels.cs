@@ -30,6 +30,8 @@ namespace MyEntertainment.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<MyEntertainment.Models.TvShowModel> TvShowModels { get; set; }
+
 
     }
 }

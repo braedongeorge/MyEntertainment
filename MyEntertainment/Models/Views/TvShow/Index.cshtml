@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MyEntertainment.Models.TVShowIndexViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My TV Shows</h2>
+
+<p>
+    @Html.ActionLink("Add a show", "Create")
+</p>
+<table class="table">
+   
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Url.Action("Index", "Images", new { id = item.showId })" />
+        </td>
+        <td id="@item.showId">
+            <b>@Html.DisplayFor(modelItem => item.title)</b>
+        </td>
+      
+        <td width="15%">
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            var rawdata = @Html.Raw(Json.Encode(Model));
+
+            for (show in rawdata) {
+                var serviceSubscribeUrl = 'https://api.themoviedb.org/3/tv/' + rawdata[show].showId;
+                var data = { api_key: "6e2ed4e434ad0a8b2779e2a49b61337c" };
+
+            
+                $.ajax({
+                    url: serviceSubscribeUrl,
+                    data: data,
+                    type: "GET",
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    success: function (data) {
+                        $('#' + data.id).append("<br /><b>Last Season Finishes: </b>" + data.last_air_date + "<br /><b>Status: </b>" + data.status + "<br /><b>Overview: </b>" + data.overview);
+
+                        console.log(data);
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+            }
+        });
+
+
+    </script>
+
+}

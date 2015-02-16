@@ -1,0 +1,90 @@
+﻿@model MyEntertainment.Models.CreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Search TV Shows</h2>
+
+<input type="text" id="search" />
+<input type="button" id="searchButton" value="Search" />
+<form id="searchForm">
+
+
+</form>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.title)
+    @Html.HiddenFor(model => model.showId)
+    @Html.HiddenFor(model => model.posterURL)
+
+    <input type="submit" value="Add" class="btn btn-default" />
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            var formVal;
+           
+
+
+
+            $("#searchButton").click(function () {
+                $("radio").remove();
+                var serviceSubscribeUrl = 'https://api.themoviedb.org/3/search/tv';
+                var searchText = $("#search").val();
+                var data = { api_key: "6e2ed4e434ad0a8b2779e2a49b61337c", query: searchText };
+
+                $.ajax({
+                    url: serviceSubscribeUrl,
+                    data: data,
+                    type: "GET",
+                    dataType: "jsonp",
+                    jsonp: "callback",
+                    success: function (data) {
+                        formVal = data;
+                        console.log(data);
+                        for (var i = 0; i < data.results.length; i++) {
+                            $("#searchForm").append("<input type='radio' name='tvshow' value='" + i + "' />" + data.results[i].name + " - First Aired: " + data.results[i].first_air_date + "<br>");
+                        }
+                        $("input[name=tvshow]", "#searchForm").bind("change", function () {
+                            var selectValue = $(this).val();
+                            console.log(selectValue);
+                            $("#title").val(formVal.results[selectValue].name);
+                            console.log(formVal.results[selectValue].name);
+                            $("#showId").val(formVal.results[selectValue].id);
+                            $("#posterURL").val(formVal.results[selectValue].poster_path);
+                            console.log(formVal.results[0]);
+
+                        });
+
+                        console.log(data.results[0].name);
+
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(errorThrown);
+                    }
+                });
+            });
+
+        });
+    </script>
+
+}
+
+
+
+
+
+
+
+
