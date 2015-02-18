@@ -17,6 +17,7 @@
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
+    <meta name="description" content="Build a list of TV Shows to construct a show calendar" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -32,8 +33,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("My Shows", "Index", "TVShow")</li>
-                    <li>@Html.ActionLink("Coming Episodes", "About", "Home")</li>
-                    <li>@Html.ActionLink("Add Show", "Create", "TVShow")</li>
+                    <li>@Html.ActionLink("Airing Today", "Coming", "TVShow")</li>
+                    <li>@Html.ActionLink("Add Show", "Add", "TVShow")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

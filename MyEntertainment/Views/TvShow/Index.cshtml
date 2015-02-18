@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MyEntertainment.Models.TVShowIndexViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "My Shows";
 }
 
 <h2>My TV Shows</h2>
 
 <p>
-    @Html.ActionLink("Add a show", "Create")
+    @Html.ActionLink("Add a show", "Add")
 </p>
 <table class="table">
    
@@ -17,13 +17,13 @@
         <td>
             <img src="@Url.Action("Index", "Images", new { id = item.showId })" />
         </td>
-        <td id="@item.showId">
-            <b>@Html.DisplayFor(modelItem => item.title)</b>
+        <td>
+            <div id="@item.showId" style="max-height: 142px; overflow-y: hidden; text-overflow: ellipsis">
+                <b>@Html.DisplayFor(modelItem => item.title)</b>
+            </div>
         </td>
       
-        <td width="15%">
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+        <td width="10%">
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>

@@ -31,6 +31,10 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -204,7 +208,6 @@
     <Compile Include="Models\TVShowViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyEntertainmentModels.cs" />
-    <Compile Include="Models\TvShowModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UseRepositoryInterface.cs" />
@@ -273,12 +276,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\TvShow\Create.cshtml" />
+    <Content Include="Views\TvShow\Add.cshtml" />
     <Content Include="Views\TvShow\Search.cshtml" />
     <Content Include="Views\TvShow\Index.cshtml" />
     <Content Include="Views\TvShow\Delete.cshtml" />
     <Content Include="Views\TvShow\Details.cshtml" />
-    <Content Include="Views\TvShow\Edit.cshtml" />
+    <Content Include="Views\TvShow\Coming.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

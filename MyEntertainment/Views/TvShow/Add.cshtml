@@ -1,13 +1,15 @@
 ﻿@model MyEntertainment.Models.CreateViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add a Show";
 }
 
-<h2>Search TV Shows</h2>
+<h2>Add TV Show</h2>
 
-<input type="text" id="search" />
-<input type="button" id="searchButton" value="Search" />
+<form id="searchBar">
+    <input type="text" id="search" />
+    <input type="submit" id="searchButton" value="Search" />
+</form>
 <form id="searchForm">
 
 
@@ -20,7 +22,7 @@
     @Html.HiddenFor(model => model.showId)
     @Html.HiddenFor(model => model.posterURL)
 
-    <input type="submit" value="Add" class="btn btn-default" />
+    <input type="submit" value="Add Show" class="btn btn-default" />
 
 }
 
@@ -33,11 +35,10 @@
     <script>
         $(document).ready(function () {
             var formVal;
-           
-
-
-
-            $("#searchButton").click(function () {
+ 
+            $("#searchBar").submit(function (e) {
+                e.preventDefault();
+                $("#searchForm").empty();
                 $("radio").remove();
                 var serviceSubscribeUrl = 'https://api.themoviedb.org/3/search/tv';
                 var searchText = $("#search").val();

@@ -38,7 +38,14 @@ namespace MyEntertainment.Repositories
 
             public void UpdateTVShows(string tvshow, UserModel obj)
             {
-                obj.tvShows += "," + tvshow;
+                if (String.IsNullOrEmpty(obj.tvShows)) {
+                    obj.tvShows += tvshow;
+                }
+                else
+                {
+                    obj.tvShows += "," + tvshow;
+                }
+               
                 db.Entry(obj).State = EntityState.Modified;
             }
 
